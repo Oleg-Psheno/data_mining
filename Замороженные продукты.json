@@ -1,0 +1,300 @@
+{
+  "name": "Замороженные продукты",
+  "code": "602",
+  "products": [
+    {
+      "id": 8036,
+      "name": "Чебурек Горячая штучка, с мясом, замороженный, 90 г",
+      "mech": null,
+      "img_link": "https://media.5ka.ru/media/products/3483781.jpg",
+      "plu": 3483781,
+      "promo": {
+        "id": 1170328688,
+        "date_begin": "2021-04-01",
+        "date_end": "2021-05-04",
+        "type": "",
+        "description": "",
+        "kind": "Z011",
+        "expired_at": 11
+      },
+      "current_prices": {
+        "price_reg__min": 27.95,
+        "price_promo__min": 23.99
+      },
+      "store_name": null
+    },
+    {
+      "id": 7898,
+      "name": "ЛОЖКАРЕВ Варен/карт и гриб.350г",
+      "mech": null,
+      "img_link": "https://media.5ka.ru/media/products/2125815.jpg",
+      "plu": 2125815,
+      "promo": {
+        "id": 1170328688,
+        "date_begin": "2021-04-01",
+        "date_end": "2021-05-04",
+        "type": "",
+        "description": "",
+        "kind": "Z011",
+        "expired_at": 11
+      },
+      "current_prices": {
+        "price_reg__min": 79.05,
+        "price_promo__min": 66.99
+      },
+      "store_name": null
+    },
+    {
+      "id": 23038,
+      "name": "Мясосодержащее кулинарное изделие в тесте жареное замороженное. Мини чебуреки с мясом. Вес 300г.",
+      "mech": null,
+      "img_link": "https://media.5ka.ru/media/products/4078158.jpg",
+      "plu": 4078158,
+      "promo": {
+        "id": 1174631955,
+        "date_begin": "2021-04-20",
+        "date_end": "2021-04-26",
+        "type": "",
+        "description": "",
+        "kind": "Z001",
+        "expired_at": 3
+      },
+      "current_prices": {
+        "price_reg__min": 89.99,
+        "price_promo__min": 69.99
+      },
+      "store_name": null
+    },
+    {
+      "id": 475,
+      "name": "Чебупели с ветчиной и сыром, Горячая штучка, 300 г",
+      "mech": null,
+      "img_link": "https://media.5ka.ru/media/products/3395673.jpg",
+      "plu": 3395673,
+      "promo": {
+        "id": 1173707270,
+        "date_begin": "2021-04-20",
+        "date_end": "2021-04-26",
+        "type": "",
+        "description": "",
+        "kind": "Z001",
+        "expired_at": 3
+      },
+      "current_prices": {
+        "price_reg__min": 99.0,
+        "price_promo__min": 89.99
+      },
+      "store_name": null
+    },
+    {
+      "id": 3796,
+      "name": "Котлеты рыбные мороженые \"Четверг\" из трески 300г.",
+      "mech": null,
+      "img_link": "https://media.5ka.ru/media/products/3614367.jpg",
+      "plu": 3614367,
+      "promo": {
+        "id": 1173707621,
+        "date_begin": "2021-04-20",
+        "date_end": "2021-04-26",
+        "type": "",
+        "description": "",
+        "kind": "Z001",
+        "expired_at": 3
+      },
+      "current_prices": {
+        "price_reg__min": 134.99,
+        "price_promo__min": 99.99
+      },
+      "store_name": null
+    },
+    {
+      "id": 565,
+      "name": "Полуфабрикаты из мяса птицы замороженные: Котлеты \"Белорусские куриные\" 560г",
+      "mech": null,
+      "img_link": "https://media.5ka.ru/media/products/4033184.jpg",
+      "plu": 4033184,
+      "promo": {
+        "id": 1173707270,
+        "date_begin": "2021-04-20",
+        "date_end": "2021-04-26",
+        "type": "",
+        "description": "",
+        "kind": "Z001",
+        "expired_at": 3
+      },
+      "current_prices": {
+        "price_reg__min": 184.99,
+        "price_promo__min": 109.99
+      },
+      "store_name": null
+    },
+    {
+      "id": 8017,
+      "name": "С ПЫЛУ С ЖАРУ Котлеты ФИЛЕЙН.говяж.425г",
+      "mech": null,
+      "img_link": "https://media.5ka.ru/media/products/3452752.jpg",
+      "plu": 3452752,
+      "promo": {
+        "id": 1170328688,
+        "date_begin": "2021-04-01",
+        "date_end": "2021-05-04",
+        "type": "",
+        "description": "",
+        "kind": "Z011",
+        "expired_at": 11
+      },
+      "current_prices": {
+        "price_reg__min": 134.99,
+        "price_promo__min": 114.99
+      },
+      "store_name": null
+    },
+    {
+      "id": 478,
+      "name": "Полуфабрикаты мясные в тесте категории Б замороженные. Блинчики с телятиной на сливочном масле 450г",
+      "mech": null,
+      "img_link": "https://media.5ka.ru/media/products/3403651.jpg",
+      "plu": 3403651,
+      "promo": {
+        "id": 1173707270,
+        "date_begin": "2021-04-20",
+        "date_end": "2021-04-26",
+        "type": "",
+        "description": "",
+        "kind": "Z001",
+        "expired_at": 3
+      },
+      "current_prices": {
+        "price_reg__min": 236.99,
+        "price_promo__min": 129.99
+      },
+      "store_name": null
+    },
+    {
+      "id": 8082,
+      "name": "VИТАМИН Киноа ФЕРМ.ПР.с овощ/базил.400г",
+      "mech": null,
+      "img_link": "https://media.5ka.ru/media/products/3636753.jpg",
+      "plu": 3636753,
+      "promo": {
+        "id": 1170328688,
+        "date_begin": "2021-04-01",
+        "date_end": "2021-05-04",
+        "type": "",
+        "description": "",
+        "kind": "Z011",
+        "expired_at": 11
+      },
+      "current_prices": {
+        "price_reg__min": 179.99,
+        "price_promo__min": 145.99
+      },
+      "store_name": null
+    },
+    {
+      "id": 527,
+      "name": "Полуфабрикаты в тесте замороженные с мясной начинкой категории Б: пельмени \"Бульмени с говядиной и свининой\" 900г",
+      "mech": null,
+      "img_link": "https://media.5ka.ru/media/products/3622053.jpg",
+      "plu": 3622053,
+      "promo": {
+        "id": 1173707270,
+        "date_begin": "2021-04-20",
+        "date_end": "2021-04-26",
+        "type": "",
+        "description": "",
+        "kind": "Z001",
+        "expired_at": 3
+      },
+      "current_prices": {
+        "price_reg__min": 209.8,
+        "price_promo__min": 159.99
+      },
+      "store_name": null
+    },
+    {
+      "id": 482,
+      "name": "Мороженое Коровка из Кореновки, полено с шоколадом, 400 г",
+      "mech": null,
+      "img_link": "https://media.5ka.ru/media/products/3409352.jpg",
+      "plu": 3409352,
+      "promo": {
+        "id": 1173707270,
+        "date_begin": "2021-04-20",
+        "date_end": "2021-04-26",
+        "type": "",
+        "description": "",
+        "kind": "Z001",
+        "expired_at": 3
+      },
+      "current_prices": {
+        "price_reg__min": 184.99,
+        "price_promo__min": 179.99
+      },
+      "store_name": null
+    },
+    {
+      "id": 3814,
+      "name": "Креветки Fish House, средние, 500 г",
+      "mech": null,
+      "img_link": "https://media.5ka.ru/media/products/3635799.jpg",
+      "plu": 3635799,
+      "promo": {
+        "id": 1173707621,
+        "date_begin": "2021-04-20",
+        "date_end": "2021-04-26",
+        "type": "",
+        "description": "",
+        "kind": "Z001",
+        "expired_at": 3
+      },
+      "current_prices": {
+        "price_reg__min": 229.99,
+        "price_promo__min": 199.99
+      },
+      "store_name": null
+    },
+    {
+      "id": 8117,
+      "name": "Пельмени 4 вида мяса, Сибирская коллекция, 700 г",
+      "mech": null,
+      "img_link": "https://media.5ka.ru/media/products/3671957.jpg",
+      "plu": 3671957,
+      "promo": {
+        "id": 1170328688,
+        "date_begin": "2021-04-01",
+        "date_end": "2021-05-04",
+        "type": "",
+        "description": "",
+        "kind": "Z011",
+        "expired_at": 11
+      },
+      "current_prices": {
+        "price_reg__min": 338.99,
+        "price_promo__min": 199.99
+      },
+      "store_name": null
+    },
+    {
+      "id": 3802,
+      "name": "Треска филе, Fish House, 600 г",
+      "mech": null,
+      "img_link": "https://media.5ka.ru/media/products/3626338.jpg",
+      "plu": 3626338,
+      "promo": {
+        "id": 1173707621,
+        "date_begin": "2021-04-20",
+        "date_end": "2021-04-26",
+        "type": "",
+        "description": "",
+        "kind": "Z001",
+        "expired_at": 3
+      },
+      "current_prices": {
+        "price_reg__min": 249.0,
+        "price_promo__min": 219.99
+      },
+      "store_name": null
+    }
+  ]
+}
