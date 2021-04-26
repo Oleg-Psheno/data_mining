@@ -2,7 +2,7 @@ import requests
 import json
 from pathlib import Path
 import time
-
+import pymongo
 
 class Parser:
     headers = {
@@ -42,7 +42,10 @@ class Parser:
             self._save(product, file_path)
 
     def _save(self, data: dict, file_path):
-        file_path.write_text(json.dumps(data, ensure_ascii=False))
+        client = pymongo.MongoClient()
+        collection = client.parser.products_5ka
+        collection.insert_one(data)
+        # file_path.write_text(json.dumps(data, ensure_ascii=False))
 
 
 def get_save_path(dir_name):
