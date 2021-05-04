@@ -4,8 +4,10 @@ from pymongo import MongoClient
 from urllib.parse import urljoin
 import time
 import datetime
-
-
+'''
+Задача: 
+передедать на sqlAlchemy
+'''
 class ParserGB:
 
     def __init__(self, start_url, connection):
