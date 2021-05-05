@@ -1,6 +1,7 @@
 import bs4
 import requests
-from pymongo import MongoClient
+# from pymongo import MongoClient
+from database.db import Database
 from urllib.parse import urljoin
 import time
 import datetime
@@ -10,9 +11,9 @@ import datetime
 '''
 class ParserGB:
 
-    def __init__(self, start_url, connection):
+    def __init__(self, start_url, db):
         self.start_url = start_url
-        self.connection = connection
+        self.db = db
         self.done_url = set()
         self.tasks = []
         start_task = self._get_task(start_url, self._parse_feed)
@@ -64,15 +65,26 @@ class ParserGB:
         content = article.find('div', attrs={'class': 'blogpost-content'})
         image = content.find('img').get('src')
         text = content.text
-        author = {'name': soup.find('div', attrs={'itemprop': 'author'}).text,
-                  'link': urljoin('https://gb.ru/',
-                                  soup.find('div', attrs={'itemprop': 'author'}).parent.attrs.get('href'))
-                  }
+        # author = {'name': soup.find('div', attrs={'itemprop': 'author'}).text,'link': urljoin('https://gb.ru/',soup.find('div', attrs={'itemprop': 'author'}).parent.attrs.get('href'))}
+        author_tag = soup.find("div", attrs={"itemprop": "author"})
         comments = self.get_comments(soup)
-        data = {'url': url, 'title': title, 'description': description,
-                'time': time, 'image': image, 'text': text, 'author': author,
-                'comments': comments
-                }
+        data = {'post_data':{
+            'title': title,
+            'url': url,
+            'id': soup.find('comments').attrs.get('commentable-id'),
+            },
+            'author_data': {
+                'id': int(author_tag.parent.attrs.get("href").split("/")[-1]),
+                'url': urljoin(url, author_tag.parent.attrs.get("href")),
+                "name": author_tag.text,
+            },
+            'tags_data': [
+                {"name": tag.text, "url": urljoin(url, tag.attrs.get("href"))}
+                for tag in soup.find_all("a", attrs={"class": "small"})
+            ],
+            'comment_data': comments
+        }
+
         return data
 
     def get_comments(self, soup):
@@ -100,14 +112,16 @@ class ParserGB:
             result = task()
             if isinstance(result, dict):
                 self.save(result)
-                print('сохранили статью')
+
 
     def save(self, data):
-        self.connection.insert_one(data)
+        self.db.add_post(data)
 
 
 if __name__ == '__main__':
     url = 'https://gb.ru/posts'
-    connection = MongoClient()['parserGB']['parse_data']
-    parser = ParserGB(url, connection)
+    # connection = MongoClient()['parserGB']['parse_data']
+    db = Database('sqlite:///gb_blog.db')
+    parser = ParserGB(url, db)
+
     parser.run()
