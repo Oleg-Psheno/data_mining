@@ -59,13 +59,6 @@ class ParserGB:
     def _parse_post(self, url, soup):
         article = soup.find('article', attrs={'class': 'blogpost__article-wrapper'})
         title = article.find('h1').text
-        description = article.find('div', attrs={'class': 'blogpost-description'}).text
-        raw_time = list(article.find('div', attrs={'class': 'blogpost-date-views'}).children)[0].get('datetime')
-        time = datetime.datetime.strptime(raw_time,'%Y-%m-%dT%H:%M:%S+03:00')
-        content = article.find('div', attrs={'class': 'blogpost-content'})
-        image = content.find('img').get('src')
-        text = content.text
-        # author = {'name': soup.find('div', attrs={'itemprop': 'author'}).text,'link': urljoin('https://gb.ru/',soup.find('div', attrs={'itemprop': 'author'}).parent.attrs.get('href'))}
         author_tag = soup.find("div", attrs={"itemprop": "author"})
         comments = self.get_comments(soup)
         data = {'post_data':{
