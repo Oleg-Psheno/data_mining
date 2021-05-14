@@ -8,11 +8,14 @@
 from itemadapter import ItemAdapter
 from pymongo import MongoClient
 from .settings import BOT_NAME
+from scrapy import Request
+from scrapy.pipelines.images import ImagesPipeline
 
 
 class GbParsePipeline:
     def process_item(self, item, spider):
         return item
+
 
 class GbMongoPipe:
 
@@ -21,5 +24,20 @@ class GbMongoPipe:
         self.db = client[BOT_NAME]
 
     def process_item(self, item, spider):
-        self.db[spider.name].insert_one(item)
+        if not item.get('name'):
+            self.db[spider.name].insert_one(item)
+        else:
+            self.db['authors'].insert_one(item)
+        return item
+
+
+class GbImageDownloadPipeline(ImagesPipeline):
+
+    def get_media_requests(self, item, info):
+        for url in item.get('photos',[]):
+            yield Request(url)
+
+    def item_completed(self, results, item, info):
+        if item.get('photos'):
+            item["photos"] = [itm[1] for itm in results]
         return item
