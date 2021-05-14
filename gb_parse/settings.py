@@ -9,6 +9,9 @@
 
 BOT_NAME = 'gb_parse'
 
+LOG_ENABLE = True
+LOG_LEVEL = 'DEBUG'
+
 SPIDER_MODULES = ['gb_parse.spiders']
 NEWSPIDER_MODULE = 'gb_parse.spiders'
 
@@ -63,9 +66,10 @@ DEFAULT_REQUEST_HEADERS = {
 
 # Configure item pipelines
 # See https://docs.scrapy.org/en/latest/topics/item-pipeline.html
-#ITEM_PIPELINES = {
-#    'gb_parse.pipelines.GbParsePipeline': 300,
-#}
+ITEM_PIPELINES = {
+   'gb_parse.pipelines.GbParsePipeline': 300,
+  'gb_parse.pipelines.GbMongoPipe': 400,
+}
 
 # Enable and configure the AutoThrottle extension (disabled by default)
 # See https://docs.scrapy.org/en/latest/topics/autothrottle.html
