@@ -7,6 +7,8 @@ from urllib.parse import urljoin
 
 def get_salary_info(str):
     pass
+
+
 def clear_price(price):
     try:
         result = float(price.replace("\u2009", ""))
@@ -37,6 +39,26 @@ def get_author_id(text):
         pass
     return user_link
 
+def get_price(price):
+    try:
+        result = int(price.replace(' ',''))
+    except ValueError:
+        result= None
+    return result
+
+def get_address(str):
+    return ''.join(str).replace('\n','')
+
+def get_params(item):
+    selector = Selector(text=item)
+    data = {}
+    data['name'] = selector.xpath('//li/span/text()').extract_first()
+    if selector.xpath('//li/a/text()').extract_first():
+        data['value'] = selector.xpath('//li/a/text()').extract_first()
+    else:
+        data['value'] = selector.xpath('//li/text()').extract()[1]
+    return data
+
 class AutoyoulaLoader(ItemLoader):
     default_item_class = dict
     url_out = TakeFirst()
@@ -48,6 +70,7 @@ class AutoyoulaLoader(ItemLoader):
     author_in = MapCompose(get_author_id)
     author_out = TakeFirst()
 
+
 class HhLoader(ItemLoader):
     default_item_class = dict
     url_out = TakeFirst()
@@ -55,6 +78,17 @@ class HhLoader(ItemLoader):
     salary_out = MapCompose(get_salary_info)
     author_url_out = TakeFirst()
 
+
+class AvitoLoader(ItemLoader):
+    default_item_class = dict
+    url_out = TakeFirst()
+    title_out = TakeFirst()
+    price_in = MapCompose(get_price)
+    author_url_out = TakeFirst()
+    price_out = TakeFirst()
+    address_in = MapCompose(get_address)
+    address_out = TakeFirst()
+    parameters_in = MapCompose(get_params)
 
 
 
