@@ -90,6 +90,10 @@ class AvitoLoader(ItemLoader):
     address_out = TakeFirst()
     parameters_in = MapCompose(get_params)
 
+class InstaLoader(ItemLoader):
+    default_item_class = dict
+
+
 
 
 
