@@ -1,5 +1,7 @@
 import scrapy
 import json
+from ..loaders import InstaLoader
+from datetime import datetime
 
 
 class InstagramSpider(scrapy.Spider):
@@ -37,11 +39,10 @@ class InstagramSpider(scrapy.Spider):
     def tag_page_parse(self, response):
         data = self.get_js_data(response)
         sections = data['entry_data']['TagPage'][0]['data']['recent']['sections']
-        posts = []
         for section in sections:
             block = section['layout_content']['medias']
             for post in block:
-                posts.append(post['media'])
+                yield from self.post_parse(post)
         try:
             next_data = {
                 'url':'https://i.instagram.com/api/v1/tags/summer/sections/',
@@ -51,7 +52,7 @@ class InstagramSpider(scrapy.Spider):
             yield scrapy.FormRequest(
                 next_data['url'],
                 method='POST',
-                callback=self.parse,
+                callback=self.tag_page_parse,
                 formdata={'max_id': next_data['max_id'],},
                 headers={'X-CSRFToken': data['config']['csrf_token']}
             )
@@ -59,6 +60,15 @@ class InstagramSpider(scrapy.Spider):
             print('fail')
         else:
             print(1)
+
+    def post_parse(self, data):
+        loader = InstaLoader(item=data)
+        loader.add_value('time',datetime.now())
+        for k,v in data.items():
+            loader.add_value(k,v)
+        yield loader.load_item()
+
+
 
     def get_js_data(self, response):
         data = response.xpath('//script[contains(text(),"window._sharedData =")]'
